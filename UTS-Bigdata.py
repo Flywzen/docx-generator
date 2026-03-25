@@ -3,27 +3,24 @@
 
 from docx import Document
 from docx.shared import Pt
-from docx.enum.text import WD_ALIGN_PARAGRAPH
 
-# Create document
 doc = Document()
 
-# Helper function
+# Helper
 def add_heading(text, level=1):
     doc.add_heading(text, level=level)
 
 def add_paragraph(text=""):
     p = doc.add_paragraph(text)
-    p_format = p.paragraph_format
-    p_format.space_after = Pt(6)
+    p.paragraph_format.space_after = Pt(6)
 
 # =========================
-# HALAMAN JUDUL
+# BAGIAN 1: HALAMAN JUDUL
 # =========================
 add_heading('UJIAN TENGAH SEMESTER', 0)
 
+add_paragraph('Topik: Analisis Big Data\n')
 add_paragraph('Mata Kuliah IF25-40402 – Mahadata\n')
-add_paragraph('[JUDUL TOPIK]\n')
 
 add_paragraph('Disusun oleh:')
 add_paragraph('- Nama 1 – NIM')
@@ -38,175 +35,99 @@ add_paragraph('Semester Genap 2025/2026')
 doc.add_page_break()
 
 # =========================
-# BAB 1
+# BAGIAN 2: PENDAHULUAN
 # =========================
-add_heading('BAB 1 PENDAHULUAN', 1)
+add_heading('BAGIAN 2 PENDAHULUAN', 1)
 
-add_heading('1.1 Latar Belakang', 2)
-add_paragraph('[Isi latar belakang]')
+add_heading('2.1 Latar Belakang', 2)
+add_paragraph('[Jelaskan pentingnya analitik big data: real-time analytics, ML at scale, dsb]')
 
-add_heading('1.2 Tujuan Review', 2)
-add_paragraph('- Tujuan 1\n- Tujuan 2\n- Tujuan 3')
+add_heading('2.2 Tujuan Review', 2)
+add_paragraph(
+    '- Mengidentifikasi metode analitik big data\n'
+    '- Membandingkan pendekatan antar jurnal\n'
+    '- Mengevaluasi kelebihan dan kelemahan\n'
+)
 
-add_heading('1.3 Ruang Lingkup', 2)
-add_paragraph('[Batasan pembahasan]')
+add_heading('2.3 Ruang Lingkup', 2)
+add_paragraph('[Fokus pada stream processing, ML at scale, dll]')
 
-add_heading('1.4 Metodologi Pencarian Jurnal', 2)
-add_paragraph('Database: IEEE, ACM, Springer, ScienceDirect')
-add_paragraph('Kata kunci: "big data" AND "[topik]"')
-add_paragraph('Kriteria: 2023–2026, peer-reviewed')
-
-doc.add_page_break()
-
-# Install library
-!pip install python-docx
-
-from docx import Document
-from docx.shared import Pt
-from docx.enum.text import WD_ALIGN_PARAGRAPH
-
-# Create document
-doc = Document()
-
-# Helper function
-def add_heading(text, level=1):
-    doc.add_heading(text, level=level)
-
-def add_paragraph(text=""):
-    p = doc.add_paragraph(text)
-    p_format = p.paragraph_format
-    p_format.space_after = Pt(6)
-
-# =========================
-# HALAMAN JUDUL
-# =========================
-add_heading('UJIAN TENGAH SEMESTER', 0)
-
-add_paragraph('Mata Kuliah IF25-40402 – Mahadata\n')
-add_paragraph('[JUDUL TOPIK]\n')
-
-add_paragraph('Disusun oleh:')
-add_paragraph('- Nama 1 – NIM')
-add_paragraph('- Nama 2 – NIM')
-add_paragraph('- Nama 3 – NIM\n')
-
-add_paragraph('Dosen Pengampu: [Nama Dosen]')
-add_paragraph('Program Studi Teknik Informatika')
-add_paragraph('Institut Teknologi Sumatera')
-add_paragraph('Semester Genap 2025/2026')
+add_heading('2.4 Metodologi Pencarian Jurnal', 2)
+add_paragraph(
+    'Database: IEEE, ACM, Springer, ScienceDirect\n'
+    'Kata kunci: "big data" AND "stream processing" AND "real-time analytics"\n'
+    'Kriteria: 2023–2026, peer-reviewed, relevan dengan analitik big data'
+)
 
 doc.add_page_break()
 
 # =========================
-# BAB 1
+# BAGIAN 3: REVIEW JURNAL
 # =========================
-add_heading('BAB 1 PENDAHULUAN', 1)
-
-add_heading('1.1 Latar Belakang', 2)
-add_paragraph('[Isi latar belakang]')
-
-add_heading('1.2 Tujuan Review', 2)
-add_paragraph('- Tujuan 1\n- Tujuan 2\n- Tujuan 3')
-
-add_heading('1.3 Ruang Lingkup', 2)
-add_paragraph('[Batasan pembahasan]')
-
-add_heading('1.4 Metodologi Pencarian Jurnal', 2)
-add_paragraph('Database: IEEE, ACM, Springer, ScienceDirect')
-add_paragraph('Kata kunci: "big data" AND "[topik]"')
-add_paragraph('Kriteria: 2023–2026, peer-reviewed')
-
-doc.add_page_break()
-
-# =========================
-# BAB 2 (TEMPLATE LOOP)
-# =========================
-# =========================
-# BAB 2 (UPGRADED)
-# =========================
-add_heading('BAB 2 REVIEW JURNAL', 1)
+add_heading('BAGIAN 3 REVIEW JURNAL', 1)
 
 for i in range(1, 6):
-    add_heading(f'2.{i} Jurnal {i}', 2)
+    add_heading(f'3.{i} Jurnal {i}', 2)
 
-    # Identitas
-    add_heading(f'2.{i}.1 Identitas Jurnal', 3)
+    add_heading(f'3.{i}.1 Identitas Jurnal', 3)
     add_paragraph('Judul:\nPenulis:\nVenue:\nTahun:\nDOI:\nPublisher:')
 
-    # Ringkasan
-    add_heading(f'2.{i}.2 Ringkasan', 3)
+    add_heading(f'3.{i}.2 Ringkasan Konten', 3)
     add_paragraph(
-        'Problem Statement:\n'
-        '- Apa masalah utama?\n\n'
-        'Metode:\n'
-        '- Pendekatan yang digunakan?\n\n'
-        'Kontribusi:\n'
-        '- Apa hal baru yang ditawarkan?\n\n'
+        'Problem Statement:\n\n'
+        'Metode:\n\n'
+        'Kontribusi:\n\n'
         'Dataset & Skala:\n'
-        '- Ukuran data (GB/TB)?\n'
-        '- Jumlah node/cluster?\n\n'
+        '- Ukuran data (GB/TB)\n'
+        '- Jumlah node\n'
+        '- Benchmark (TPC-DS, HiBench, dll)\n\n'
         'Hasil:\n'
-        '- Metric utama (accuracy, latency, throughput)?'
+        '- Accuracy\n'
+        '- Latency\n'
+        '- Throughput'
     )
 
-    # Kekuatan
-    add_heading(f'2.{i}.3 Kekuatan', 3)
+    add_heading(f'3.{i}.3 Kekuatan', 3)
     add_paragraph(
-        '- Skalabilitas terbukti (jelaskan bagaimana)\n'
-        '- Eksperimen komprehensif (benchmark, dataset besar)\n'
+        '- Skalabilitas terbukti secara eksperimen\n'
+        '- Evaluasi pada dataset besar\n'
         '- Perbandingan dengan metode lain\n'
-        '- Kejelasan metodologi'
     )
 
-    # Kelemahan
-    add_heading(f'2.{i}.4 Kelemahan', 3)
+    add_heading(f'3.{i}.4 Kelemahan', 3)
     add_paragraph(
         '- Asumsi tidak realistis\n'
-        '- Skala eksperimen tidak mencerminkan big data nyata\n'
-        '- Tidak ada evaluasi cost/performance\n'
-        '- Threat to validity tidak dibahas'
+        '- Skala tidak mencerminkan kondisi nyata\n'
+        '- Tidak membahas cost/performance\n'
     )
 
-    # Analisis Tambahan (INI YANG BARU)
-    add_heading(f'2.{i}.5 Analisis Teknis', 3)
+    add_heading(f'3.{i}.5 Kaitan dengan Materi Kuliah', 3)
     add_paragraph(
-        'Scalability:\n'
-        '- Apakah scale linear?\n\n'
-        'Latency vs Throughput:\n'
-        '- Trade-off apa yang terjadi?\n\n'
-        'Complexity:\n'
-        '- Kompleksitas implementasi?\n\n'
-        'Real-world applicability:\n'
-        '- Bisa dipakai di industri atau tidak?'
+        '- Distributed computing\n'
+        '- Stream processing\n'
+        '- Machine learning at scale'
     )
 
-    # Kaitan kuliah
-    add_heading(f'2.{i}.6 Kaitan dengan Materi Kuliah', 3)
-    add_paragraph(
-        '- Konsep Mahadata yang digunakan\n'
-        '- Apakah memperluas teori?\n'
-    )
+doc.add_page_break()
 
 # =========================
-# BAB 3 (UPGRADED)
+# BAGIAN 4: ANALISIS KOMPARATIF
 # =========================
-add_heading('BAB 3 ANALISIS KOMPARATIF', 1)
+add_heading('BAGIAN 4 ANALISIS KOMPARATIF', 1)
 
-# Tabel komparatif detail
-add_heading('3.1 Tabel Perbandingan', 2)
+add_heading('4.1 Tabel Perbandingan', 2)
 
 jumlah_jurnal = 5
 table = doc.add_table(rows=1, cols=jumlah_jurnal + 1)
 hdr_cells = table.rows[0].cells
 
-headers = ['Aspek'] + [f'Jurnal {i}' for i in range(1, jumlah_jurnal + 1)]
-
+headers = ['Aspek'] + [f'J{i}' for i in range(1, jumlah_jurnal + 1)]
 for i, h in enumerate(headers):
     hdr_cells[i].text = h
 
-# Tambahkan aspek penting
 aspek_list = [
     'Metode',
+    'Hasil',
     'Arsitektur',
     'Skala Data',
     'Latency',
@@ -220,144 +141,61 @@ for aspek in aspek_list:
     row_cells = table.add_row().cells
     row_cells[0].text = aspek
 
-# Analisis mendalam
-add_heading('3.2 Analisis Perbandingan', 2)
-add_paragraph(
-    'Perbandingan Metode:\n'
-    '- Apa perbedaan pendekatan utama?\n\n'
-    'Trade-off:\n'
-    '- Latency vs throughput\n'
-    '- Accuracy vs scalability\n\n'
-    'Efisiensi:\n'
-    '- Mana paling efisien dan kenapa?\n'
-)
+add_heading('4.2 Perbandingan Pendekatan', 2)
+add_paragraph('[Bandingkan batch vs stream vs hybrid]')
 
-add_heading('3.3 Analisis Tren', 2)
-add_paragraph(
-    '- Apakah ada pergeseran dari batch ke real-time?\n'
-    '- Apakah ada dominasi teknologi tertentu (Spark, Flink)?\n'
-)
+add_heading('4.3 Analisis Tren', 2)
+add_paragraph('[Perkembangan real-time analytics, distributed ML, dll]')
 
-add_heading('3.4 Evaluasi Kritis', 2)
-add_paragraph(
-    '- Apakah klaim tiap jurnal valid?\n'
-    '- Apakah eksperimen cukup kuat?\n'
-)
+add_heading('4.4 Jurnal Paling Berkontribusi', 2)
+add_paragraph('[Pilih dan jelaskan dengan argumen kuat]')
 
-add_heading('3.5 Jurnal Terbaik', 2)
-add_paragraph(
-    '- Pilih 1 jurnal terbaik\n'
-    '- Jelaskan berdasarkan bukti (bukan opini)'
-)
-
-add_heading('3.6 Research Gap', 2)
-add_paragraph(
-    '- Masalah yang belum terselesaikan\n'
-    '- Keterbatasan umum semua jurnal\n'
-    '- Peluang penelitian baru'
-)
-# =========================
-# BAB 4
-# =========================
-add_heading('BAB 4 KESIMPULAN DAN SARAN', 1)
-
-add_heading('4.1 Kesimpulan', 2)
-add_paragraph('[Kesimpulan]')
-
-add_heading('4.2 Saran', 2)
-add_paragraph('[Saran]')
+add_heading('4.5 Research Gap', 2)
+add_paragraph('[Celah penelitian yang belum terselesaikan]')
 
 doc.add_page_break()
 
 # =========================
-# DAFTAR PUSTAKA
+# BAGIAN 5: KESIMPULAN
 # =========================
-add_heading('DAFTAR PUSTAKA', 1)
-add_paragraph('[1] ...')
+add_heading('BAGIAN 5 KESIMPULAN DAN SARAN', 1)
+
+add_heading('5.1 Kesimpulan', 2)
+add_paragraph('[Rangkuman temuan utama]')
+
+add_heading('5.2 Saran', 2)
+add_paragraph('[Arah penelitian selanjutnya + implikasi industri]')
 
 doc.add_page_break()
 
 # =========================
-# LAMPIRAN
+# BAGIAN 6: DAFTAR PUSTAKA
 # =========================
-add_heading('LAMPIRAN', 1)
+add_heading('BAGIAN 6 DAFTAR PUSTAKA', 1)
+add_paragraph(
+    '[1] Author, "Title," Journal, vol., no., year, DOI.\n'
+    '[2] Author, "Title," Conference, year, DOI.\n'
+)
 
-add_heading('A. Pembagian Tugas', 2)
+doc.add_page_break()
+
+# =========================
+# BAGIAN 7: LAMPIRAN
+# =========================
+add_heading('BAGIAN 7 LAMPIRAN', 1)
+
+add_heading('7.1 Pembagian Tugas', 2)
 table = doc.add_table(rows=1, cols=3)
 hdr_cells = table.rows[0].cells
 hdr_cells[0].text = 'Nama'
 hdr_cells[1].text = 'Tugas'
 hdr_cells[2].text = 'Kontribusi (%)'
 
-add_heading('B. Screenshot Jurnal', 2)
-add_paragraph('[Masukkan gambar]')
+add_heading('7.2 Screenshot Jurnal', 2)
+add_paragraph('[Masukkan halaman pertama jurnal]')
 
-# Save file
-file_path = '/content/template_uts_mahadata.docx'
-doc.save(file_path)
-
-file_path
-# =========================
-# BAB 3
-# =========================
-add_heading('BAB 3 ANALISIS KOMPARATIF', 1)
-
-add_heading('3.1 Tabel Perbandingan', 2)
-table = doc.add_table(rows=1, cols=6)
-hdr_cells = table.rows[0].cells
-headers = ['Aspek', 'Jurnal 1', 'Jurnal 2', 'Jurnal 3', 'Jurnal 4','Jurnal 5']
-for i, h in enumerate(headers):
-    hdr_cells[i].text = h
-
-add_heading('3.2 Analisis Perbandingan', 2)
-add_paragraph('[Analisis perbandingan]')
-
-add_heading('3.3 Jurnal Terbaik', 2)
-add_paragraph('[Analisis jurnal terbaik]')
-
-add_heading('3.4 Research Gap', 2)
-add_paragraph('[Celah penelitian]')
-
-doc.add_page_break()
-
-# =========================
-# BAB 4
-# =========================
-add_heading('BAB 4 KESIMPULAN DAN SARAN', 1)
-
-add_heading('4.1 Kesimpulan', 2)
-add_paragraph('[Kesimpulan]')
-
-add_heading('4.2 Saran', 2)
-add_paragraph('[Saran]')
-
-doc.add_page_break()
-
-# =========================
-# DAFTAR PUSTAKA
-# =========================
-add_heading('DAFTAR PUSTAKA', 1)
-add_paragraph('[1] ...')
-
-doc.add_page_break()
-
-# =========================
-# LAMPIRAN
-# =========================
-add_heading('LAMPIRAN', 1)
-
-add_heading('A. Pembagian Tugas', 2)
-table = doc.add_table(rows=1, cols=3)
-hdr_cells = table.rows[0].cells
-hdr_cells[0].text = 'Nama'
-hdr_cells[1].text = 'Tugas'
-hdr_cells[2].text = 'Kontribusi (%)'
-
-add_heading('B. Screenshot Jurnal', 2)
-add_paragraph('[Masukkan gambar]')
-
-# Save file
-file_path = '/content/template_uts_mahadata.docx'
+# Save
+file_path = '/content/UTS_Mahadata_Analisis_Big_Data.docx'
 doc.save(file_path)
 
 file_path
