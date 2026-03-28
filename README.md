@@ -1,1 +1,1 @@
-# docx-generator
+# docx-generator py script template
