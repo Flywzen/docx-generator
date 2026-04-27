@@ -101,9 +101,6 @@ for i in range(1, 6):
 
 doc.add_page_break()
 
-# =========================
-# BAGIAN 4: ANALISIS KOMPARATIF
-# =========================
 add_heading('BAGIAN 4 ANALISIS KOMPARATIF', 1)
 
 add_heading('4.1 Tabel Perbandingan', 2)
@@ -146,9 +143,7 @@ add_paragraph('[Celah penelitian yang belum terselesaikan]')
 
 doc.add_page_break()
 
-# =========================
-# BAGIAN 5: KESIMPULAN
-# =========================
+
 add_heading('BAGIAN 5 KESIMPULAN DAN SARAN', 1)
 
 add_heading('5.1 Kesimpulan', 2)
