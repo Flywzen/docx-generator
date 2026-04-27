@@ -154,9 +154,6 @@ add_paragraph('[Arah penelitian selanjutnya + implikasi industri]')
 
 doc.add_page_break()
 
-# =========================
-# BAGIAN 6: DAFTAR PUSTAKA
-# =========================
 add_heading('BAGIAN 6 DAFTAR PUSTAKA', 1)
 add_paragraph(
     '[1] Author, "Title," Journal, vol., no., year, DOI.\n'
