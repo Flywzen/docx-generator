@@ -55,9 +55,6 @@ add_paragraph(
 
 doc.add_page_break()
 
-# =========================
-# BAGIAN 3: REVIEW JURNAL
-# =========================
 add_heading('BAGIAN 3 REVIEW JURNAL', 1)
 
 for i in range(1, 6):
