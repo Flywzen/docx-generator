@@ -1,4 +1,3 @@
-# Install library
 !pip install python-docx
 
 from docx import Document
