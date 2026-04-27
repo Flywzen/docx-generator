@@ -6,7 +6,7 @@ from docx.shared import Pt
 
 doc = Document()
 
-# Helper
+
 def add_heading(text, level=1):
     doc.add_heading(text, level=level)
 
@@ -14,9 +14,7 @@ def add_paragraph(text=""):
     p = doc.add_paragraph(text)
     p.paragraph_format.space_after = Pt(6)
 
-# =========================
-# BAGIAN 1: HALAMAN JUDUL
-# =========================
+
 add_heading('UJIAN TENGAH SEMESTER', 0)
 
 add_paragraph('Topik: Analisis Big Data\n')
