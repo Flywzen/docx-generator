@@ -32,9 +32,6 @@ add_paragraph('Semester Genap 2025/2026')
 
 doc.add_page_break()
 
-# =========================
-# BAGIAN 2: PENDAHULUAN
-# =========================
 add_heading('BAGIAN 2 PENDAHULUAN', 1)
 
 add_heading('2.1 Latar Belakang', 2)
